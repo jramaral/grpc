@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPCContagem";
+
+package count;
+
+// The greeting service definition.
+service ContadorSvc {
+ 
+ rpc GerarValor (ContadorRequest) returns (ContadorReply);
+}
+
+// The request message containing the user's name.
+message ContadorRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message ContadorReply {
+  string mensagem = 1;
+  int32 valorAtual = 2;
+  string localSvc = 3;
+  string targetFramework = 4;
+}
